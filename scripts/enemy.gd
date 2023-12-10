@@ -1,5 +1,7 @@
 extends Area2D
 
+signal update_score
+
 @export var speed_x: int = 300
 @export var speed_y: int = 50
 @export var rotation_speed: float = 0.05
@@ -17,6 +19,7 @@ func _physics_process(delta: float) -> void:
 		global_position.y += -speed_y*delta*enemy_flying_direction
 	
 func die() -> void:
+	emit_signal("update_score")
 	queue_free()
 	
 func _on_body_entered(body) -> void:

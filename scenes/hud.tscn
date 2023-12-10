@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6idl8yb64wfg"]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_1ol84"]
+[ext_resource type="FontFile" uid="uid://eusmawj8inl" path="res://assets/font/Silkscreen-Bold.ttf" id="1_ie6ki"]
+[ext_resource type="Texture2D" uid="uid://bkd1c2j5g1qro" path="res://assets/spaceship.png" id="3_6x6l3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_lkhuh"]
+font = ExtResource("1_ie6ki")
+font_size = 50
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1ol84")
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 640.0
+offset_right = 352.0
+offset_bottom = 708.0
+text = "SCORE:"
+label_settings = SubResource("LabelSettings_lkhuh")
+
+[node name="LivesIcon_1" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.016
+anchor_bottom = 0.026
+offset_left = 1185.0
+offset_top = 632.0
+offset_right = 1237.52
+offset_bottom = 686.28
+texture = ExtResource("3_6x6l3")
+expand_mode = 2
+
+[node name="LivesIcon_2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.016
+anchor_bottom = 0.026
+offset_left = 1098.0
+offset_top = 632.0
+offset_right = 1150.52
+offset_bottom = 686.28
+texture = ExtResource("3_6x6l3")
+expand_mode = 2
+
+[node name="LivesIcon_3" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.016
+anchor_bottom = 0.026
+offset_left = 1008.0
+offset_top = 632.0
+offset_right = 1060.52
+offset_bottom = 686.28
+texture = ExtResource("3_6x6l3")
+expand_mode = 2

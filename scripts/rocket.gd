@@ -12,6 +12,8 @@ func _physics_process(_delta) -> void:
 func _on_screen_exited():
 	queue_free()
 
-func _on_area_entered(area: Area2D) -> void:
+func _on_area_entered(area: Area2D) -> bool:
 	queue_free()
 	area.die()
+	
+	return true
