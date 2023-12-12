@@ -3,7 +3,9 @@ extends Node2D
 @export var lives = 3
 @onready var player_scene = $Player
 @onready var hud = $UI/HUD
+@onready var ui = $UI
 
+var game_over_scene = preload("res://scenes/game_over.tscn")
 var score = 0
 
 func _ready():
@@ -11,16 +13,20 @@ func _ready():
 	hud.off_visible_left_lives(lives)
 
 func _on_enemy_cleaner_area_entered(area: Area2D) -> void:
-	area.die()
+	area.queue_free()
 	
 func _on_player_collision_with_enemy() -> void:
 	lives -= 1
 	hud.off_visible_left_lives(lives)
-	update_score(false)
+	score -= 100 # when enemy hit player you get 0 points: -100+100
 	if (lives < 1):
-		print("Game over")
 		player_scene.die()
-		close()
+		
+		await get_tree().create_timer(1.5).timeout
+		
+		var end_screen_instance = game_over_scene.instantiate()
+		end_screen_instance.display_score_to_end_screen(score)
+		ui.add_child(end_screen_instance)
 		
 func _on_enemy_spawner_enemy_spawned(enemy_instance):
 	enemy_instance.connect("update_score", _on_enemy_died)
@@ -30,11 +36,5 @@ func close() -> void:
 	get_tree().quit()
 
 func _on_enemy_died() -> void:
-	update_score(true)
+	score += 100 # when rocket hit player but not hit player
 	hud.update_score_ui(score)
-
-func update_score(flag):
-	if flag:
-		score += 100
-	else:
-		score -= 100
