@@ -1,10 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwmob7843oi3k"]
+[gd_scene load_steps=12 format=3 uid="uid://bwmob7843oi3k"]
 
 [ext_resource type="Texture2D" uid="uid://cdboet16twaf3" path="res://assets/textures/background_tile_blue.png" id="1_h8qm7"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_mcvr8"]
 [ext_resource type="PackedScene" uid="uid://eea060x1rh27" path="res://scenes/player.tscn" id="2_ldqfl"]
 [ext_resource type="PackedScene" uid="uid://2aqd28i3gmgt" path="res://scenes/enemy_spawner.tscn" id="4_qruwp"]
 [ext_resource type="PackedScene" uid="uid://c6idl8yb64wfg" path="res://scenes/hud.tscn" id="5_hhvm2"]
+[ext_resource type="AudioStream" uid="uid://cj8mf8fpcyady" path="res://assets/audio/enemy_dead.wav" id="6_1d8fr"]
+[ext_resource type="AudioStream" uid="uid://c4y1q28nr24oi" path="res://assets/audio/lost_live.wav" id="7_2s81f"]
+[ext_resource type="AudioStream" uid="uid://dsvnigwp8dy22" path="res://assets/audio/player_shot.wav" id="8_4h88o"]
+[ext_resource type="AudioStream" uid="uid://ckr6nq6jh647f" path="res://assets/audio/game_over.wav" id="9_i8gpr"]
+[ext_resource type="AudioStream" uid="uid://cg5osxvsq54vy" path="res://assets/audio/move_horizontal.wav" id="10_gkn5v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lcldr"]
 size = Vector2(99, 1584)
@@ -15,6 +20,23 @@ script = ExtResource("1_mcvr8")
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="UI" instance=ExtResource("5_hhvm2")]
+
+[node name="SFX" type="Node2D" parent="."]
+
+[node name="EnemyDeadSound" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("6_1d8fr")
+
+[node name="LostLiveSound" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("7_2s81f")
+
+[node name="PlayerShootSound" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("8_4h88o")
+
+[node name="GameOverSound" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("9_i8gpr")
+
+[node name="MoveHorizontalSound" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("10_gkn5v")
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 1280.0
