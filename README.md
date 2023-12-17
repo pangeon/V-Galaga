@@ -9,6 +9,12 @@
     </video>
 </p>
 
+
+
+https://github.com/pangeon/V-Galaga/assets/16515600/d7a28055-d2ce-4343-859e-63000eaa2318
+
+
+
 ## Changelog
 * **Version 1.21** add music
 * **Version 1.2** add SFX
