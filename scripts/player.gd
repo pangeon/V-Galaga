@@ -12,7 +12,6 @@ var rocket_scene = preload("res://scenes/rocket.tscn")
 @onready var rocket_container: Node = get_node("RocketContainer")
 
 @onready var player_shoot_sound = $"../SFX/PlayerShootSound"
-@onready var move_horizontal_sound = $"../SFX/MoveHorizontalSound"
 
 func _process(_delta) -> void:
 	shoot()
@@ -34,10 +33,8 @@ func movement_config() -> void:
 		velocity.y = move_speed
 	if Input.is_action_pressed("right"): 
 		velocity.x = move_speed-200
-		move_horizontal_sound.play()
 	if Input.is_action_pressed("left"): 
 		velocity.x = -move_speed+200
-		move_horizontal_sound.play()
 	
 func limit_area_movement(width: int, height: int) -> void:
 	if global_position.x < 0: 

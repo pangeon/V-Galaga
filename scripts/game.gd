@@ -5,6 +5,7 @@ extends Node2D
 @onready var hud = $UI/HUD
 @onready var ui = $UI
 
+@onready var game_music = $SFX/GameMusic
 @onready var enemy_dead_sound = $SFX/EnemyDeadSound
 @onready var lost_live_sound = $SFX/LostLiveSound
 @onready var game_over_sound = $SFX/GameOverSound
@@ -13,6 +14,7 @@ var game_over_scene = preload("res://scenes/game_over.tscn")
 var score = 0
 
 func _ready():
+	game_music.play()
 	hud.update_score_ui(score)
 	hud.off_visible_left_lives(lives)
 
@@ -27,7 +29,7 @@ func _on_player_collision_with_enemy() -> void:
 	if (lives < 1):
 		player_scene.die()
 		game_over_sound.play()
-		
+		game_music.stop()
 		await get_tree().create_timer(1.5).timeout
 		
 		var end_screen_instance = game_over_scene.instantiate()
