@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bwmob7843oi3k"]
+[gd_scene load_steps=13 format=3 uid="uid://bwmob7843oi3k"]
 
 [ext_resource type="Texture2D" uid="uid://cdboet16twaf3" path="res://assets/textures/background_tile_blue.png" id="1_h8qm7"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_mcvr8"]
@@ -13,6 +13,18 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lcldr"]
 size = Vector2(99, 1584)
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ghnat"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 400, 1)
+particle_flag_disable_z = true
+gravity = Vector3(-200, 0, 0)
+initial_velocity_min = -100.0
+initial_velocity_max = -100.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_max = 3.0
+color = Color(0.882353, 0.717647, 0.835294, 0.8)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_mcvr8")
@@ -57,6 +69,12 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyCleaner"]
 position = Vector2(-55, 312)
 shape = SubResource("RectangleShape2D_lcldr")
+
+[node name="BackgroundWarpEffect" type="GPUParticles2D" parent="."]
+position = Vector2(1278, 334)
+amount = 300
+process_material = SubResource("ParticleProcessMaterial_ghnat")
+lifetime = 10.0
 
 [connection signal="collision_with_enemy" from="Player" to="." method="_on_player_collision_with_enemy"]
 [connection signal="enemy_spawned" from="EnemySpawner" to="." method="_on_enemy_spawner_enemy_spawned"]

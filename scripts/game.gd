@@ -30,6 +30,7 @@ func _on_player_collision_with_enemy() -> void:
 		player_scene.die()
 		game_over_sound.play()
 		game_music.stop()
+		
 		await get_tree().create_timer(1.5).timeout
 		
 		var end_screen_instance = game_over_scene.instantiate()

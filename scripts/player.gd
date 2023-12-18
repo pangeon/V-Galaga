@@ -7,7 +7,9 @@ const move_speed: int = 800
 const falling_speed: int = 10
 const area_width: int = 1280
 const area_height: int = 720
+const rocket_time_limiter: float = 0.4
 
+var is_rocket_blocked = false
 var rocket_scene = preload("res://scenes/rocket.tscn")
 @onready var rocket_container: Node = get_node("RocketContainer")
 
@@ -50,11 +52,15 @@ func limit_area_movement(width: int, height: int) -> void:
 func shoot() -> void:
 	var rocket_instance: Area2D = rocket_scene.instantiate()
 	
-	if Input.is_action_just_pressed("action"):
+	if Input.is_action_just_pressed("action") && is_rocket_blocked == false:
 		player_shoot_sound.play()
 		rocket_container.add_child(rocket_instance)
 		rocket_instance.global_position = global_position
 		rocket_instance.global_position.x += 110
+		
+		is_rocket_blocked = true
+		await get_tree().create_timer(rocket_time_limiter).timeout
+		is_rocket_blocked = false 
 		
 func hurt_player() -> void:
 	emit_signal("collision_with_enemy")
