@@ -78,6 +78,7 @@ lifetime = 10.0
 
 [connection signal="collision_with_enemy" from="Player" to="." method="_on_player_collision_with_enemy"]
 [connection signal="enemy_spawned" from="EnemySpawner" to="." method="_on_enemy_spawner_enemy_spawned"]
+[connection signal="rocket_enemy_spawned" from="EnemySpawner" to="." method="_on_enemy_spawner_rocket_enemy_spawned"]
 [connection signal="area_entered" from="EnemyCleaner" to="." method="_on_enemy_cleaner_area_entered"]
 
 [editable path="Player"]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cig0dgxs2fa3p"]
+
+[ext_resource type="Script" path="res://scripts/rocket_enemy.gd" id="1_fjxmy"]
+[ext_resource type="Texture2D" uid="uid://ksiywur80nxb" path="res://assets/alien_rocket.png" id="1_yq4k6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a5snj"]
+radius = 80.0
+height = 252.0
+
+[node name="RocketEnemy" type="Area2D"]
+collision_layer = 16
+script = ExtResource("1_fjxmy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.785398
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_yq4k6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12, -1.19209e-07)
+rotation = 1.5708
+scale = Vector2(0.3, 0.3)
+shape = SubResource("CapsuleShape2D_a5snj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

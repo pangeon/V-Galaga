@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6eontfk74thq"]
+
+[ext_resource type="PackedScene" uid="uid://cig0dgxs2fa3p" path="res://scenes/rocket_enemy.tscn" id="1_6wcjn"]
+[ext_resource type="Script" path="res://scripts/rocket_enemy_path.gd" id="1_mwc1a"]
+
+[sub_resource type="Curve2D" id="Curve2D_66fxq"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1440, -327, 126.479, -169.897, -126.479, 169.897, 1156, 280, 290.713, -230.305, -290.713, 230.305, 627, 189, 354.897, 320.917, -354.897, -320.917, -84, 157)
+}
+point_count = 4
+
+[node name="RocketEnemyPath" type="Path2D"]
+position = Vector2(-66, 85)
+curve = SubResource("Curve2D_66fxq")
+script = ExtResource("1_mwc1a")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="."]
+position = Vector2(1440, -327)
+rotation = 2.00841
+
+[node name="RocketEnemy" parent="PathFollow2D" instance=ExtResource("1_6wcjn")]

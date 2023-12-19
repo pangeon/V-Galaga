@@ -28,4 +28,9 @@ position = Vector2(1350, 675)
 [node name="Timer" type="Timer" parent="."]
 autostart = true
 
+[node name="RocketEnemyTimeSpawner" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="RocketEnemyTimeSpawner" to="." method="_on_rocket_enemy_time_spawner_timeout"]

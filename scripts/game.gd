@@ -36,7 +36,7 @@ func _on_player_collision_with_enemy() -> void:
 		var end_screen_instance = game_over_scene.instantiate()
 		end_screen_instance.display_score_to_end_screen(score)
 		ui.add_child(end_screen_instance)
-		
+
 func _on_enemy_spawner_enemy_spawned(enemy_instance):
 	enemy_instance.connect("update_score", _on_enemy_died)
 	add_child(enemy_instance)
@@ -45,6 +45,15 @@ func close() -> void:
 	get_tree().quit()
 
 func _on_enemy_died() -> void:
-	score += 100 # when rocket hit player but not hit player
+	score += 100
 	hud.update_score_ui(score)
 	enemy_dead_sound.play()
+
+func _on_rocket_enemy_died() -> void:
+	score += 400
+	hud.update_score_ui(score)
+	enemy_dead_sound.play()
+
+func _on_enemy_spawner_rocket_enemy_spawned(enemy_rocket_instance):
+	add_child(enemy_rocket_instance)
+	enemy_rocket_instance.rocket_enemy.connect("update_score", _on_rocket_enemy_died)
