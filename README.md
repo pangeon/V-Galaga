@@ -16,6 +16,7 @@ https://github.com/pangeon/V-Galaga/assets/16515600/d7a28055-d2ce-4343-859e-6300
 
 
 ## Changelog
+* **Version 1.3.1** update rocket enemy track
 * **Version 1.3** add new rocket enemy
 * **Version 1.22** add background warp effect, shooting optimization
 * **Version 1.21** add music
@@ -45,6 +46,9 @@ https://github.com/pangeon/V-Galaga/assets/16515600/d7a28055-d2ce-4343-859e-6300
 3) Spaceship
 	* Source: [www.iconfinder.com](https://www.iconfinder.com/icons/3387305/launch_shopping_spaceship_startup_icon)
 	* Author: [Cuby Design](https://www.iconfinder.com/WTicon)
+4) Rocket
+	* Source: [www.iconfinder.com](https://www.iconfinder.com/icons/1054990/rocket_spacecraft_spaceship_icon)
+	* Author: Nick Roach
 
 ### Fonts
 1) Silkscreen

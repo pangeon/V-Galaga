@@ -7,6 +7,6 @@ func _ready():
 	enemy_rocket_path.set_progress_ratio(0)
 
 func _process(delta):
-	enemy_rocket_path.progress_ratio += 0.25 * delta
+	enemy_rocket_path.progress_ratio += 0.1 * delta
 	if enemy_rocket_path.progress_ratio > 0.94:
 		queue_free()
