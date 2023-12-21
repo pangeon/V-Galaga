@@ -1,4 +1,5 @@
 # V-Galaga
+
 <p align="center">
   <img alt="V-Galaga" src="icon.svg" width="200">
   <br>
@@ -9,7 +10,7 @@
 	</video>
 </p>
 
-
+* **[Play in browser!](https://cecherz.itch.io/v-galaga)**
 
 https://github.com/pangeon/V-Galaga/assets/16515600/d7a28055-d2ce-4343-859e-63000eaa2318
 
