@@ -1,0 +1,185 @@
+[gd_scene load_steps=8 format=3 uid="uid://cboyh2qu4v8qn"]
+
+[ext_resource type="Script" path="res://scripts/high_score.gd" id="1_ox2w7"]
+[ext_resource type="FontFile" uid="uid://d14qjfkr4ghux" path="res://assets/font/Silkscreen-Regular.ttf" id="1_y8ov7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1b3lj"]
+font = ExtResource("1_y8ov7")
+font_size = 60
+outline_size = 20
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fmem8"]
+font = ExtResource("1_y8ov7")
+font_size = 50
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1nbd"]
+bg_color = Color(0.262745, 0.262745, 0.262745, 1)
+border_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bmhll"]
+bg_color = Color(0.294118, 0.294118, 0.294118, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0j0mn"]
+bg_color = Color(0.329412, 0.329412, 0.329412, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="High Score" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 320.0
+offset_right = 960.0
+offset_bottom = 720.0
+script = ExtResource("1_ox2w7")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 640.0
+offset_bottom = 720.0
+
+[node name="TitleLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.123
+anchor_top = 0.029
+anchor_right = 0.123
+anchor_bottom = 0.029
+offset_left = 0.279999
+offset_top = 0.119999
+offset_right = 483.28
+offset_bottom = 80.12
+grow_horizontal = 2
+text = "HALL OF FAME"
+label_settings = SubResource("LabelSettings_1b3lj")
+
+[node name="FirstScoreLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.122
+anchor_top = 0.14
+anchor_right = 0.122
+anchor_bottom = 0.14
+offset_left = 8.92
+offset_top = 94.2
+offset_right = 455.92
+offset_bottom = 162.2
+grow_horizontal = 2
+grow_vertical = 2
+text = "1. 6000"
+label_settings = SubResource("LabelSettings_fmem8")
+
+[node name="SecondScoreLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.122
+anchor_top = 0.14
+anchor_right = 0.122
+anchor_bottom = 0.14
+offset_left = 8.92
+offset_top = 147.2
+offset_right = 455.92
+offset_bottom = 215.2
+grow_horizontal = 2
+grow_vertical = 2
+text = "2. 5000"
+label_settings = SubResource("LabelSettings_fmem8")
+
+[node name="ThirdScoreLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.122
+anchor_top = 0.14
+anchor_right = 0.122
+anchor_bottom = 0.14
+offset_left = 8.92
+offset_top = 201.2
+offset_right = 455.92
+offset_bottom = 269.2
+grow_horizontal = 2
+grow_vertical = 2
+text = "3. 4000"
+label_settings = SubResource("LabelSettings_fmem8")
+
+[node name="FourthScoreLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.122
+anchor_top = 0.14
+anchor_right = 0.122
+anchor_bottom = 0.14
+offset_left = 8.92
+offset_top = 255.2
+offset_right = 455.92
+offset_bottom = 323.2
+grow_horizontal = 2
+grow_vertical = 2
+text = "4. 3000"
+label_settings = SubResource("LabelSettings_fmem8")
+
+[node name="FivethScoreLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.122
+anchor_top = 0.14
+anchor_right = 0.122
+anchor_bottom = 0.14
+offset_left = 8.92
+offset_top = 309.2
+offset_right = 455.92
+offset_bottom = 377.2
+grow_horizontal = 2
+grow_vertical = 2
+text = "5. 2000"
+label_settings = SubResource("LabelSettings_fmem8")
+
+[node name="SixthScoreLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.122
+anchor_top = 0.14
+anchor_right = 0.122
+anchor_bottom = 0.14
+offset_left = 8.92
+offset_top = 362.2
+offset_right = 455.92
+offset_bottom = 430.2
+grow_horizontal = 2
+grow_vertical = 2
+text = "6. 1000"
+label_settings = SubResource("LabelSettings_fmem8")
+
+[node name="ExitButton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = 227.0
+offset_right = 143.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_y8ov7")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_g1nbd")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bmhll")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0j0mn")
+text = "EXIT
+"
+
+[connection signal="pressed" from="Panel/ExitButton" to="." method="_on_exit_button_pressed"]
