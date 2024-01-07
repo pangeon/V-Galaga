@@ -12,6 +12,8 @@ func _on_button_pressed():
 
 func _on_button_hi_score_pressed():
 	var high_score_instance = high_score_scene.instantiate()
+	high_score_instance.refresh_hall_of_fame()
 	high_score_instance.save_score_to_hall_of_fame(score_to_check)
+	high_score_instance.refresh_hall_of_fame()
 	$Panel.visible = false
 	$".".add_child(high_score_instance)
