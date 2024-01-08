@@ -145,5 +145,5 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_if3xb")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_1e2xa")
 text = "HI-SCORE"
 
-[connection signal="pressed" from="Panel/ButtonRestart" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Panel/ButtonRestart" to="." method="_on_button_restart_pressed"]
 [connection signal="pressed" from="Panel/ButtonHiScore" to="." method="_on_button_hi_score_pressed"]
