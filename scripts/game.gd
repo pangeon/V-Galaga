@@ -17,6 +17,12 @@ func _ready():
 	game_music.play()
 	hud.update_score_ui(score)
 	hud.off_visible_left_lives(lives)
+	
+	# init high_score.dat file
+	if not FileAccess.file_exists("res://high_score.dat"):
+		var file = FileAccess.open("res://high_score.dat", FileAccess.WRITE)
+		file.store_string("1. 6000\n2. 5000\n3. 4000\n4. 3000\n5. 2000\n6. 1000")
+		file.close()
 
 func _on_enemy_cleaner_area_entered(area: Area2D) -> void:
 	area.queue_free()
