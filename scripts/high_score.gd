@@ -1,6 +1,6 @@
 extends Control
 
-const high_score_file_path: String = "res://high_score.dat"
+const high_score_file_path: String = "user://high_score.dat"
 
 const file_loader_scene = preload("res://scenes/file_loader.tscn")
 var file_loader_instance = file_loader_scene.instantiate()

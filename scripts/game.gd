@@ -11,7 +11,7 @@ extends Node2D
 @onready var game_over_sound = $SFX/GameOverSound
 
 var game_over_scene = preload("res://scenes/game_over.tscn")
-var score = 0
+var score: int = 0
 
 func _ready():
 	game_music.play()
@@ -19,8 +19,11 @@ func _ready():
 	hud.off_visible_left_lives(lives)
 	
 	# init high_score.dat file
-	if not FileAccess.file_exists("res://high_score.dat"):
-		var file = FileAccess.open("res://high_score.dat", FileAccess.WRITE)
+	init_high_score_file()
+
+func init_high_score_file() -> void:
+	if not FileAccess.file_exists("user://high_score.dat"):
+		var file = FileAccess.open("user://high_score.dat", FileAccess.WRITE)
 		file.store_string("1. 6000\n2. 5000\n3. 4000\n4. 3000\n5. 2000\n6. 1000")
 		file.close()
 
@@ -43,7 +46,7 @@ func _on_player_collision_with_enemy() -> void:
 		end_screen_instance.display_score_to_end_screen(score)
 		ui.add_child(end_screen_instance)
 
-func _on_enemy_spawner_enemy_spawned(enemy_instance):
+func _on_enemy_spawner_enemy_spawned(enemy_instance) -> void:
 	enemy_instance.connect("update_score", _on_enemy_died)
 	add_child(enemy_instance)
 
@@ -54,12 +57,12 @@ func _on_enemy_died() -> void:
 	score += 100
 	hud.update_score_ui(score)
 	enemy_dead_sound.play()
-
+	
 func _on_rocket_enemy_died() -> void:
 	score += 400
 	hud.update_score_ui(score)
 	enemy_dead_sound.play()
-
+	
 func _on_enemy_spawner_rocket_enemy_spawned(enemy_rocket_instance):
 	add_child(enemy_rocket_instance)
 	enemy_rocket_instance.rocket_enemy.connect("update_score", _on_rocket_enemy_died)

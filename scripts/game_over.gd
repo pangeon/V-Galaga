@@ -3,7 +3,7 @@ extends Control
 const high_score_scene = preload("res://scenes/high_score.tscn")
 var high_score_instance = high_score_scene.instantiate()
 
-func display_score_to_end_screen(total_score):
+func display_score_to_end_screen(total_score) -> void:
 	$Panel/Score.text = "SCORE: " + str(total_score)
 	high_score_instance.save_score_to_hall_of_fame(total_score)
 
