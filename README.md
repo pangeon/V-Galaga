@@ -17,8 +17,8 @@ https://github.com/pangeon/V-Galaga/assets/16515600/d7a28055-d2ce-4343-859e-6300
 
 
 ## Changelog
-* **Version 1.4.1** fix: autocreate highscore file in AppData
-* **Version 1.4** add hall of fame
+* **Version 1.4.1** fix: autocreate highscore file in AppData **[offline]**
+* **Version 1.4** add hall of fame **[offline]**
 * **Version 1.3.1** update rocket enemy track
 * **Version 1.3** add new rocket enemy
 * **Version 1.22** add background warp effect, shooting optimization
